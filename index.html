@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <div id="tap-list-app"></div>
+
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-spinner/dist/vue-spinner.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let updateData = function () {
+            fetch('https://server.digitalpour.com/DashboardServer/api/v3/MenuItems/589dfe065e002c0e5ce61eba/1/Tap?apiKey=589dfe3c5e002c0b4cba022c')
+              .then(response => response.json())
+              .then(TapList.load);
+        };
+        updateData();
+        // setInterval(updateData, 60 * 1000);
+</script>
+  </body>
+</html>
